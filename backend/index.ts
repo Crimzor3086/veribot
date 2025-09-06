@@ -38,9 +38,9 @@ const CONTRACT_ABI = [
 // Initialize blockchain connection
 async function initializeBlockchain() {
   try {
-    const rpcUrl = process.env.SEPOLIA_RPC_URL || 'http://localhost:8545';
+    const rpcUrl = process.env.SEPOLIA_RPC_URL || 'https://evmrpc-testnet.0g.ai';
     const privateKey = process.env.PRIVATE_KEY;
-    const contractAddress = process.env.CHATBOT_VERIFIER_ADDRESS;
+    const contractAddress = process.env.CHATBOT_VERIFIER_ADDRESS || '0x0B1eB634c9F6Cf22B831ca5B7B66E8CBeD3BfC78';
 
     if (!privateKey) {
       console.log('⚠️  No private key found. Running in mock mode.');
@@ -174,7 +174,7 @@ app.post('/api/chat', async (req, res) => {
         const filter = contract.filters.RequestCreated();
         const events = await contract.queryFilter(filter);
         const latestEvent = events[events.length - 1];
-        requestId = Number(latestEvent.args[0]);
+        requestId = Number((latestEvent as any).args[0]);
         
         console.log(`✅ Request created on blockchain: ${requestId}`);
       } catch (error) {

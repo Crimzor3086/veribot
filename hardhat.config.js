@@ -19,6 +19,13 @@ module.exports = {
       url: process.env.SEPOLIA_RPC_URL || "https://sepolia.infura.io/v3/YOUR_INFURA_KEY",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       chainId: 11155111
+    },
+    "0g-testnet": {
+      url: "https://evmrpc-testnet.0g.ai",
+      chainId: 16601,
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      gasPrice: 1000000000, // 1 gwei
+      timeout: 60000
     }
   },
   paths: {

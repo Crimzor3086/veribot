@@ -2,6 +2,8 @@
 
 A minimal but working prototype of an **On-Chain AI Chatbot** specialized as a **DAO Governance & Voting Helper**. Built with modern full-stack architecture including smart contracts, backend API, and React frontend.
 
+**GitHub Repository:** https://github.com/Crimzor3086/veribot.git
+
 ## 🚀 Features
 
 - **Smart Contract**: `ChatbotVerifier.sol` for storing AI responses with cryptographic verification
@@ -52,8 +54,8 @@ onchain-ai-chatbot/
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
-cd VeriBot
+git clone https://github.com/Crimzor3086/veribot.git
+cd veribot
 
 # Install all dependencies (root, backend, frontend)
 npm run install-all
@@ -93,7 +95,7 @@ REACT_APP_RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_KEY
 # Compile contracts
 npm run compile
 
-# Deploy to Sepolia testnet (requires PRIVATE_KEY and SEPOLIA_RPC_URL)
+# Deploy to 0G testnet (requires PRIVATE_KEY)
 npm run deploy
 
 # Or deploy to local Hardhat network
@@ -103,15 +105,20 @@ npx hardhat run scripts/deploy.js --network hardhat
 After deployment, update your `.env` file with the contract address:
 
 ```env
-CHATBOT_VERIFIER_ADDRESS=0x1234...5678
-REACT_APP_CONTRACT_ADDRESS=0x1234...5678
+CHATBOT_VERIFIER_ADDRESS=0x0B1eB634c9F6Cf22B831ca5B7B66E8CBeD3BfC78
+REACT_APP_CONTRACT_ADDRESS=0x0B1eB634c9F6Cf22B831ca5B7B66E8CBeD3BfC78
 ```
+
+### Contract Verification
+
+You can view your deployed contract on the 0G explorer:
+**https://explorer.0g.ai/address/0x0B1eB634c9F6Cf22B831ca5B7B66E8CBeD3BfC78**
 
 ### 4. Test Contract (Optional)
 
 ```bash
 # Test the deployed contract functionality
-npx hardhat run scripts/test-contract.js --network sepolia
+npx hardhat run scripts/test-contract.js --network 0g-testnet
 ```
 
 ## 🚀 Running the Application
@@ -255,11 +262,11 @@ The application includes mock governance proposals:
 ### Smart Contract Deployment
 
 ```bash
-# Deploy to Sepolia testnet
+# Deploy to 0G testnet
 npm run deploy
 
-# Deploy to mainnet (update hardhat.config.js first)
-npx hardhat run scripts/deploy.js --network mainnet
+# Deploy to 0G mainnet (update hardhat.config.js first)
+npx hardhat run scripts/deploy.js --network 0g-mainnet
 ```
 
 ### Backend Deployment

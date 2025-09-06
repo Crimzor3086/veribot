@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "hardhat compile",
-    "deploy": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy": "hardhat run scripts/deploy.js --network 0g-testnet",
     "test": "hardhat test",
     "backend": "cd backend && npm run dev",
     "frontend": "cd frontend && npm start",
