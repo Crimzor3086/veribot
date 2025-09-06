@@ -1,0 +1,24 @@
+{
+  "name": "onchain-ai-chatbot",
+  "version": "1.0.0",
+  "description": "On-Chain AI Chatbot for DAO Governance & Voting Helper",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.js --network sepolia",
+    "test": "hardhat test",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+  },
+  "keywords": ["web3", "ai", "dao", "governance", "chatbot"],
+  "author": "VeriBot Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.0"
+  },
+  "dependencies": {
+    "ethers": "^6.8.0"
+  }
+}
